@@ -1,0 +1,481 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+/*
+font-family: 'Great Vibes', cursive(필기체대체;
+font-family: 'Poppins', sans-serif(고딕체대체;}
+ */
+
+/* 공통셋팅(환경설정) */
+*{box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+html, body{margin: 0; padding: 0;}
+header, section, article, aside, nav, main, footer{display: block;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+/* 타켓을 지정해 폰트지정 */
+.tit_font{font-family: 'Great Vibes', cursive}
+
+
+
+/* header_part */
+header{position: fixed; width: 100%; height: 80px;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 2; border-bottom: 1px solid #ccc;}
+    /* z-index: position 속성 적용시만 쓸수 있음 (기본값은 적용안됨)
+     z-index: 값이 클수록 덮어쓰기 할수 있음*/    
+header .wrap{width: 1200px; height: 100%; margin: 0 auto;
+    /*background: #ff9;*/ position: relative;}
+
+/* 로고영역 */
+header .wrap .logo{position: absolute; top: 0; left: 10px; padding: 28px 0;}
+header .wrap .logo a{display: block;}
+header .wrap .logo a img{display: block; height: 24px; }
+
+/* 메뉴영역 */
+header .wrap nav{width: 100%; height: 100%;
+    /*background: #aaf;*/}
+header .wrap nav ul{width: 100%; height: 100%; display: flex;
+justify-content: center; align-items: center;}
+header .wrap nav ul li{margin: 0 15px;}/* li 공간배치역활만함 */
+
+header .wrap nav ul li a{display: block; line-height: 80px; text-transform: uppercase; /*background: #ffa;*/ position: relative;
+color: #373730;}
+
+header .wrap nav ul li:hover a{color: #662021;}
+
+header .wrap nav ul li a::before{content: "";
+position: absolute; bottom: 0; left: 50%; display: block; width: 0%; height: 4px; background-color: #662021; transition: width 0.3s linear;}
+
+header .wrap nav ul li:hover a::before{width: 50%;}
+
+header .wrap nav ul li a::after{content: "";
+    position: absolute; bottom: 0; right: 50%; display: block; width: 0%; height: 4px; background-color: #662021; transition: width 0.3s linear;}
+
+    header .wrap nav ul li:hover a::after{width: 50%;}
+
+
+/* sns 영역 */
+header .wrap .sns{position: absolute; top: 0; right: 10px;
+    padding: 28px 0;}
+header .wrap .sns ul{display: flex;}
+header .wrap .sns ul li{margin: 0 5px;} /*분기점*/
+header .wrap .sns ul li:last-child{margin-right: 0;}
+header .wrap .sns ul li a{display: block; width: 24px; height: 24px;
+    /*background: #aff;*/
+    background-size: cover;
+    background-position: 50% 50%;
+}/* a태그에 블록속성이 없으면 요소가 사라짐 */
+
+header .wrap .sns ul li:nth-child(1) a{
+    background-image: url(../img/fb_icon.png);}
+header .wrap .sns ul li:nth-child(2) a{
+    background-image: url(../img/insta_icon.png);}
+header .wrap .sns ul li:nth-child(3) a{
+    background-image: url(../img/youtube_icon.png);} 
+
+header .wrap .sns ul li:nth-child(1) a:hover{
+    background-image: url(../img/fb_icon_hover.png);}
+header .wrap .sns ul li:nth-child(2) a:hover{
+    background-image: url(../img/insta_icon_hover.png);}
+header .wrap .sns ul li:nth-child(3) a:hover{
+    background-image: url(../img/youtube_icon_hover.png);}  
+
+
+/* section_part */
+#main{width: 100%; height: 100vh; background-size: cover;
+    background-position: 50% 50%;
+    animation: changeBg 36s infinite;}
+@keyframes changeBg{
+    0%{background-image: url(../img/main_04.jpg);}
+    20%{background-image: url(../img/main_05.jpg);}
+    40%{background-image: url(../img/main_06.jpg);}
+    60%{background-image: url(../img/main_07.jpg);}
+    80%{background-image: url(../img/main_08.jpg);}
+    100%{background-image: url(../img/main_04.jpg);}
+}
+
+#main .dark{width: 100%; height: 100%; background-color: rgba(0,0,0,0.25);}
+#main .dark .wrap{width: 1200px; height: 100%; margin: 0 auto;
+/*background: #aff;*/ position: relative;}
+#main .dark .wrap h1{position: absolute; width: 500px;
+width: calc(100% / 12 * 5); right: 0; bottom: 20vh; font-size: 80px;
+color: #fff; letter-spacing: 2px;}
+
+
+/* section_part02 */
+#cont_01{width: 100%; height: 1360px;
+    background-image: url(../img/naturebg-1.png), url(../img/product.png);
+    /* 멀티bg는 첫번째 선언된 이미지 소스가 전면으로 배치된다. 두번재 선언된 것이 후면배치, 2개이상 적용가능*/
+    background-size: auto 400px, auto 320px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 50%, 100% 50%;
+    background-attachment: fixed, fixed;
+    /* 배경이미지 고정*/}
+
+
+/* article_01 */
+#cont_01 article{width: 1200px; margin: 0 auto; 
+    padding: 100px 0 60px; }
+
+/* 타이틀영역 */
+#cont_01 article:nth-child(1) .title{text-align: center;}
+#cont_01 article:nth-child(1) .title h2{font-size: 36px; color: #373730;}
+
+/* 컨텐츠(내용)부모 : display: flex;는 부모영역에 적용  */
+#cont_01 article:nth-child(1) .content{display: flex;
+    flex-wrap: nowrap;}
+
+/* 본기점01~03 통합스타일 설정 */
+#cont_01 article:nth-child(1) .content .cont_box{width: calc(100% / 3); 
+    padding: 20px 10px 0;}
+#cont_01 article:nth-child(1) .content .cont_box .subject{
+    font-size: 18px;
+    color: #662021; line-height: 40px; 
+    text-align: center; padding-bottom: 30px;}
+#cont_01 article:nth-child(1) .content .cont_box .img_cont{
+    width: 100%; height: 200px;
+    background-size: auto 110%;
+    background-position: 50% 50%;
+    transition: background-size 0.5s /*, transform 0.5s*/;
+}
+
+#cont_01 article:nth-child(1) .content .cont_box:hover .img_cont{
+    background-size: auto 115%;
+    /*transform: rotate(5deg);*/
+}
+
+/* 본기점01~03 각각에 이미지 적용  */
+#cont_01 article:nth-child(1) .content .cont_box:nth-child(1) .img_cont{
+    background-image: url(../img/intro_01.jpg);}
+#cont_01 article:nth-child(1) .content .cont_box:nth-child(2) .img_cont{
+    background-image: url(../img/intro_02.jpg);}
+#cont_01 article:nth-child(1) .content .cont_box:nth-child(3) .img_cont{
+    background-image: url(../img/intro_03.jpg);}
+
+/* 분기점01~03 본문 스타일설정  */
+#cont_01 article:nth-child(1) .content .cont_box .txt_cont{
+    padding-top: 40px;
+    color: #373730; font-size: 14px; line-height: 1.2;
+    font-weight: 200;}
+/* line-height: 1.2:폰트사이즈의 1.2배 */
+
+
+/* article_02 */
+#cont_01 article:last-child{border-top: 1px solid #d2d2d2;}
+
+#cont_01 article:nth-child(2) .title{text-align: center;}
+#cont_01 article:nth-child(2) .title h2{font-size: 36px; 
+    color: #373730;
+}
+
+#cont_01 article:nth-child(2) .content{padding-top: 40px;}
+#cont_01 article:nth-child(2) .content .cont_box{width: 100%;
+    display: flex; flex-wrap: wrap; 
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#cont_01 article:nth-child(2) .content .cont_box:nth-child(2){
+    flex-direction: row-reverse;
+}
+/* flex-direction: row-reverse; : 문서를 역순으로 바꿔라 */
+
+
+/* #cont_01 article:nth-child(2) .content .cont_box div{
+    width: calc(50% - 20px); 
+    margin: 0 10px 20px; 
+    background: #ffa;
+} -> .cont_box 하위(자식) div  요소들의  가로값을 통합으로 설정함 
+calc 이용*/
+
+
+#cont_01 article:nth-child(2) .content .cont_box .img_cont{
+    height: 240px; width: calc(50% - 20px); 
+    margin: 0 10px 20px; 
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#cont_01 article:nth-child(2) .content .cont_box:nth-child(1) .img_cont{
+    background-image: url(../img/story_02.jpg);
+}
+#cont_01 article:nth-child(2) .content .cont_box:nth-child(2) .img_cont{
+    background-image: url(../img/story_03.jpg);
+}
+
+#cont_01 article:nth-child(2) .content .cont_box .txt_cont{
+    width: calc(50% - 20px); 
+    margin: 0 10px 20px; 
+}
+#cont_01 article:nth-child(2) .content .cont_box .txt_cont h3{
+    font-size: 18px;
+    color: #662021;
+    line-height: 40px;
+    font-weight: 400;
+}
+#cont_01 article:nth-child(2) .content .cont_box .txt_cont p{
+    font-size: 14px;
+    color: #373730;
+    padding-top: 40px;
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+
+/* section_3part */
+#banner{width: 100%; height: 280px; 
+    background-image: url(../img/cashmere_bg_01.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#banner .dark{width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center; /* 공간을 중앙배치 텍스트는 별도로 설정 */
+    align-items: center; /* 공간을 중앙배치 텍스트는 별도로 설정 */
+    text-align: center; /* 텍스트는 별도로 설정 */
+}
+#banner .dark .txt_cont{color: #fff;}
+#banner .dark .txt_cont h3{font-size: 36px; line-height: 60px;}
+#banner .dark .txt_cont p{font-size: 18px; 
+    line-height: 40px; padding: 20px 2px;
+}
+#banner .dark .txt_cont a{display: inline-block;
+    /*인라인블록은 부모가위치조절 할수 있음. 블록은 안됨*/
+    width: 180px;
+    line-height: 38px; /*보더값제외*/
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+#banner .dark .txt_cont a::before{content: "";
+    position: absolute; top: 0; left: 0;
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.25);
+    z-index: -1; /* 절대기준이 아닌 상대기준으로 적용 */
+    transition: width 0.5s;
+}
+#banner .dark .txt_cont a:hover::before{width: 100%;}
+
+
+
+
+/* section_part04 */
+#cont_02{width: 100%;
+    background-image: url(../img/naturebg-2.png), url(../img/cs-bg.png);
+    background-size: auto 300px, auto 300px;
+    background-repeat: no-repeat;  /* 중복시 한번만 작성가능 */
+    background-position: -5% 50%, 105% 50%;
+    background-attachment: fixed;
+}
+
+/* <article>요소 통합스타일 */
+#cont_02 article{width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 60px;}
+
+/* 타이틀영역 통합스타일 */
+#cont_02 article .title{text-align: center;}
+#cont_02 article .title h2{font-size: 36px; color: #373730;}
+
+/* 첫번째 <article>요소 영역 */
+#cont_02 article:nth-child(1){}
+
+/* 분기점01~04 영역으로 display:flex 적용 */
+#cont_02 article:nth-child(1) .content{
+    display: flex;  /* 필수선언값 */
+    flex-wrap: wrap;  /* 필수선언값 */
+    /* justify-content: flex-start;
+    align-items: flex-start; 기본값이므로 선언생략가능*/
+    padding-top: 40px;}
+
+/* 분기점01~04 공통스타일 */
+#cont_02 article:nth-child(1) .content .cont_box{
+    width: 25%; 
+    padding: 0 10px 20px; 
+    /* width: calc(25% - 20px);
+    margin: 0 10px 20px; */
+    /* paddig 값 또는 marging값으로 규격 조절 */}
+
+/* 분기점01~04 이미지영역 */
+#cont_02 article:nth-child(1) .content .cont_box .img_cont{
+    width: 100%; height: 90px;
+    background-size: contain; /* contain 높이를 맞춤 */
+    background-position: 50% 50%;
+    background-repeat: no-repeat;}
+
+/* 개별 이미지 적용시 선택자 위치 정확히할것 */
+#cont_02 article:nth-child(1) .content .cont_box:nth-child(1) .img_cont{
+    background-image: url(../img/tab1.png);}
+#cont_02 article:nth-child(1) .content .cont_box:nth-child(2) .img_cont{
+    background-image: url(../img/tab2.png);}
+#cont_02 article:nth-child(1) .content .cont_box:nth-child(3) .img_cont{
+    background-image: url(../img/tab3.png);}
+#cont_02 article:nth-child(1) .content .cont_box:nth-child(4) .img_cont{
+    background-image: url(../img/tab4.png);}
+
+/* 분기점01~04 텍스트영역 */
+#cont_02 article:nth-child(1) .content .cont_box .txt_cont{
+    padding-top: 20px;}
+#cont_02 article:nth-child(1) .content .cont_box .txt_cont span{
+    display: block;
+    text-align: center; /* 블록설정을 해야 중앙정렬가능 */
+    font-size: 18px;
+    color: #662021;
+    line-height: 40px;
+    padding-bottom: 20px;}
+#cont_02 article:nth-child(1) .content .cont_box .txt_cont h3{
+    font-size: 18px;
+    font-weight: 700;
+    color: #373730;
+    line-height: 40px;}
+#cont_02 article:nth-child(1) .content .cont_box .txt_cont .detail_txt{}
+#cont_02 article:nth-child(1) .content .cont_box .txt_cont .detail_txt p{
+    font-size: 14px; color: #373730;
+    font-weight: 200;
+    padding-left: 20px;
+    position: relative;
+}
+#cont_02 article:nth-child(1) .content .cont_box .txt_cont .detail_txt p::before{content: "－ "; position: absolute; left: 5px;}
+/* 이용약관등에 사용됨
+부모의 패딩영역에 위치지정(position 속성값사용) 
+기호작성시 특수문자로 작성(폰트스타일 영향x)*/
+
+
+
+#cont_02 article:last-child{border-top: 1px solid #d3d3d3;}
+
+#cont_02 article:nth-child(2) .title{}
+#cont_02 article:nth-child(2) .content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 40px;}
+
+#cont_02 article:nth-child(2) .content .cont_box{
+    height: 360px;
+    margin: 0 10px 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #aaf;}
+#cont_02 article:nth-child(2) .content .cont_box:nth-child(1){
+    width: calc(100% - 20px);}
+#cont_02 article:nth-child(2) .content .cont_box:nth-child(2){
+    width: calc(100% / 12 * 5 - 20px);}
+#cont_02 article:nth-child(2) .content .cont_box:nth-child(3){
+    width: calc(100% / 12 * 7 - 20px);}
+
+#cont_02 article:nth-child(2) .content .cont_box .img_cont{
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: transform 1s;}
+
+#cont_02 article:nth-child(2) .content .cont_box:hover .img_cont{
+    transform: scale(1.1); }
+    /* 마우스오버시 백그라운드 이미지확대 1:100% 1.1:110% 수치를 의미 */
+
+#cont_02 article:nth-child(2) .content .cont_box:nth-child(1) .img_cont{
+    background-image: url(../img/store_women.jpg);}
+#cont_02 article:nth-child(2) .content .cont_box:nth-child(2) .img_cont{
+    background-image: url(../img/store_men.jpg);}
+#cont_02 article:nth-child(2) .content .cont_box:nth-child(3) .img_cont{
+    background-image: url(../img/store_kids.jpg);}
+
+
+#cont_02 article:nth-child(2) .content .cont_box a{
+    font-size: 18px;
+    position: absolute;
+    background-color: #373730;
+    color: #aaa;
+    padding: 10px 40px; /* 공간늘림 */
+    display: block; left: 50%; top: 50%;
+    /* 좌상단 꼭지점이 기준이므로 정중앙에 맞추려면  transform: translate 속성필요 */
+    transform: translate(-50%, -50%);}
+
+#cont_02 article:nth-child(2) .content .cont_box a:hover{
+    background-color: #662021;
+    color: #fff;
+}
+
+/* 지도영역 */
+/* api 앱인터페이스 구글맵사용*/
+
+#map_space{width: 100%;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#map_space div{width: 50%; height: 100%;}
+#map_space div#map_img{background-image: url(../img/store_map.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+
+/* 하단 footer */
+/* 로고 */
+footer{width: 100%; background-color: #d9d9d9; }
+footer .wrap{width: 1200px; margin: 0 auto; padding: 40px 0;}
+footer .wrap .f_main{width: 100%; height: 80px; position: relative;}
+footer .wrap .f_main .logo{position: absolute; top: 0; left: 10px;
+    width: 80px; height: 100%; 
+    background-image: url(../img/footer_logo.jpg);
+    background-size: cover; 
+    background-position: 50% 50%;}
+
+/* 메뉴+카피라이터 */
+footer .wrap .f_main nav{height: 100%;}
+footer .wrap .f_main nav ul{height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+footer .wrap .f_main nav ul li{margin: 0 10px; /*분기점에 마진값부여*/}
+footer .wrap .f_main nav ul li a{display: block;
+    color: #373730;
+    font-size: 14px;
+}
+footer .wrap .f_main nav ul li:hover a{color: #662021;}
+
+/* 에센에스 */
+footer .wrap .f_main .sns{
+    position: absolute; top: 50%; right: 10px;
+    transform: translateY(-50%); /* 중앙정렬 */}
+
+footer .wrap .f_main .sns ul{display: flex; flex-wrap: wrap;}
+footer .wrap .f_main .sns ul li{margin: 0 10px;}
+/* 분기점에 마진값 부여하여 각박스를 떨어뜨려준다 */
+footer .wrap .f_main .sns ul li a{
+    display: block;
+    width: 30px; height: 30px;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: background-image 1s;
+}
+footer .wrap .f_main .sns ul li:nth-child(1) a{
+    background-image: url(../img/fb_icon.png);}
+footer .wrap .f_main .sns ul li:nth-child(1) a:hover{
+    background-image: url(../img/fb_icon_hover.png);}
+
+footer .wrap .f_main .sns ul li:nth-child(2) a{
+    background-image: url(../img/insta_icon.png);}
+footer .wrap .f_main .sns ul li:nth-child(2) a:hover{
+    background-image: url(../img/insta_icon_hover.png);}
+
+footer .wrap .f_main .sns ul li:nth-child(3) a{
+    background-image: url(../img/youtube_icon.png);}
+footer .wrap .f_main .sns ul li:nth-child(3) a:hover{
+    background-image: url(../img/youtube_icon_hover.png);}
+
+
+.copyrights{font-size: 14px; color: #373730;
+text-align: center; line-height: 20px; padding-top: 20px;}
+
+
